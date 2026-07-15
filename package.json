@@ -1,0 +1,38 @@
+{
+  "name": "pi-subagent-status",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "test": "vitest",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write src test package.json tsconfig.json vitest.config.ts eslint.config.js .prettierrc.json",
+    "format:check": "prettier --check src test package.json tsconfig.json vitest.config.ts eslint.config.js .prettierrc.json",
+    "lint": "eslint src test vitest.config.ts eslint.config.js",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm test -- --run"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": ">=0.80.7",
+    "@earendil-works/pi-tui": ">=0.80.7"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "0.80.7",
+    "@earendil-works/pi-tui": "0.80.7",
+    "@types/node": "^24.0.0",
+    "eslint": "^10.7.0",
+    "prettier": "^3.9.5",
+    "typescript": "~5.9.0",
+    "typescript-eslint": "^8.64.0",
+    "vitest": "^4.0.0"
+  }
+}
